@@ -1,3 +1,7 @@
+This is just a simple To Do app that is meant as a way for me to learn the APIs of the [React-Testing-Library](https://testing-library.com/docs/react-testing-library/intro).
+
+I have unit testing of service methods for adding and removing a todo and integration tests within the Todo component itself to mirror how a user actually would use the app.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
