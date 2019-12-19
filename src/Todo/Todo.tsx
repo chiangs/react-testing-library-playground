@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { onRemoveTodo, onAddTodo } from './_services';
+import React, { useRef, useState } from 'react';
+import { addItemToList, removeItemFromList } from './_services';
 
 type Props = {};
 
@@ -12,12 +12,13 @@ const Todo: React.FC<Props> = props => {
   const todoRef = useRef<any>();
 
   const removeTodo = (id: number) => {
-    const udpatedTodos = onRemoveTodo(todos, id);
+    const udpatedTodos = removeItemFromList(todos, 'id', id);
     setTodos(udpatedTodos);
   };
 
   const addTodo = (data: string) => {
-    const updatedTodos = onAddTodo(todos, data);
+    const newTodo = { id: todos.length + 1, item: data };
+    const updatedTodos = addItemToList(todos, newTodo);
     setTodos(updatedTodos);
   };
 

@@ -1,15 +1,7 @@
-export const onRemoveTodo = (
-  todos: { id: number; item: string }[],
-  id: number
-): { id: number; item: string }[] => todos.filter(todo => todo.id !== id);
+export const removeItemFromList = <T, K extends keyof T>(
+  list: T[],
+  propName: K,
+  propValue: T[K]
+): T[] => list.filter(item => item[propName] !== propValue);
 
-export const onAddTodo = (
-  todos: { id: number; item: string }[],
-  data: string
-): { id: number; item: string }[] => [
-  ...todos,
-  {
-    id: todos.length + 1,
-    item: data
-  }
-];
+export const addItemToList = <T>(list: T[], newItem: T) => [...list, newItem];
